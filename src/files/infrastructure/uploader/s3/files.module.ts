@@ -34,6 +34,7 @@ const infrastructurePersistenceModule = (databaseConfig() as DatabaseConfig)
       useFactory: (configService: ConfigService<AllConfigType>) => {
         const s3 = new S3Client({
           region: configService.get('file.awsS3Region', { infer: true }),
+          endpoint: configService.get('file.awsS3Endpoint', { infer: true }),
           credentials: {
             accessKeyId: configService.getOrThrow('file.accessKeyId', {
               infer: true,

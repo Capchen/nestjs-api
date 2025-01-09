@@ -25,7 +25,7 @@ export class UserSeedService {
 
     if (!countAdmin) {
       const salt = await bcrypt.genSalt();
-      const password = await bcrypt.hash('secret', salt);
+      const password = await bcrypt.hash('cancan0422', salt);
 
       await this.repository.save(
         this.repository.create({

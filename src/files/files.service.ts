@@ -15,4 +15,8 @@ export class FilesService {
   findByIds(ids: FileType['id'][]): Promise<FileType[]> {
     return this.fileRepository.findByIds(ids);
   }
+
+  findAll(): Promise<FileType[]> {
+    return this.fileRepository.findAll();
+  }
 }

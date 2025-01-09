@@ -26,4 +26,9 @@ export class FilesS3Service {
       }),
     };
   }
+
+  async findAll(): Promise<{ files: FileType[] }> {
+    const files = await this.fileRepository.findAll();
+    return { files };
+  }
 }
